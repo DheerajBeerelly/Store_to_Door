@@ -72,6 +72,8 @@ class Migration(migrations.Migration):
                 ('price', models.IntegerField()),
                 ('quantity', models.IntegerField(default=0)),
                 ('item_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='webapp.Item')),
+                ('des', models.CharField(max_length=50,blank=False)),
+                ('pic', models.FileField(upload_to='')),
             ],
         ),
         migrations.CreateModel(

@@ -21,4 +21,5 @@ urlpatterns = [
     path('restaurant/<int:pk>/',views.restuarantMenu,name='menu'),
     path('checkout/',views.checkout,name='checkout'),
 
+
 ]

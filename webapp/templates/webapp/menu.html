@@ -9,7 +9,6 @@
 		<br/>
 		<b>Location: </b><a class="text-success"><strong>{{rlocation}}</strong></a>
 		<br>
-		<b >Min Order:</b> <a class="text-success">&#x20b9;{{rmin}}</a>
 	</font>
 	</p>
 	</div>
@@ -24,6 +23,7 @@
 				<table class="table table-hover table-bordered">
 					<thead>
 						<th>Item Name</th>
+						<th>Recipe Description</th>
 						<th>Category</th>
 						<th>Price</th>
 						<th>Add</th>
@@ -31,6 +31,7 @@
 					{% for x in items %}
 					<tr>
 					<td>{{x.0}}</td>
+						<td><textarea  style="width:350px;height:100px;">{{x.6}}</textarea></input></td>
 					<td>{{x.1}}</td>
 					<td>&#x20b9; {{x.2}}</td>
 					{% if x.4 == "Open" %}

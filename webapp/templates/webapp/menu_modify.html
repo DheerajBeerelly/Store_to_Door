@@ -11,6 +11,8 @@
 	<input id="tab3" type="radio" name="tabs">
   	<label for="tab3">Delete Items</label>
 
+
+
 	<section id="content1">
 		<div class="order-top" style="border:0">
 			<p>
@@ -20,6 +22,8 @@
 						<th>Item</th>
 						<th>Price</th>
 						<th>Quantity</th>
+						<th>Recipe Description</th>
+
 						<th></th>
 					</thead>
 				{% for x in menu %}
@@ -28,6 +32,8 @@
 							<td>{{x.0}}</td>
 							<td><input type="number" value="{{x.1}}" name="price"/></td>
 							<td><input type="number" value="{{x.2}}" name="quantity"/></td>
+							<td><textarea name="des" style="width:250px;height:150px;" >{{x.4}}</textarea></td>
+
 							<td>
 								<input type="hidden" value="{{x.3}}" name="menuid">
 								<input type="submit" value="Modify" name="submit" class="btn btn-success btn-lg" />
@@ -48,6 +54,7 @@
 						<th>Item</th>
 						<th>Price</th>
 						<th>Quantity</th>
+						<th>Recipe Description</th>
 						<th></th>
 					</thead>
 					<tr>
@@ -62,6 +69,7 @@
 						<td><input type="number" value="" name="price"/></td>
 						<td><input type="number" value="" name="quantity"/>
 						</td>
+							<td><textarea name="des" style="width:250px;height:150px;" ></textarea></td>
 						<td>
 							<input type="submit" value="Add" name="submit" class="btn  btn-primary btn-lg">
 						</td>
@@ -80,6 +88,7 @@
 						<th>Item</th>
 						<th>Price</th>
 						<th>Quantity</th>
+
 						<th></th>
 					</thead>
 				{% for x in menu %}

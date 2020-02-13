@@ -53,6 +53,8 @@ class Menu(models.Model):
 	r_id     = models.ForeignKey(Restaurant,on_delete=models.CASCADE)
 	price    = models.IntegerField(blank=False)
 	quantity = models.IntegerField(blank=False,default=0)
+	des = models.CharField(max_length=50,blank=False)
+	#pic      = models.FileField(blank=False)
 
 	def __str__(self):
 		return self.item_id.fname+' - '+str(self.price)

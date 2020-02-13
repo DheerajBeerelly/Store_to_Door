@@ -131,6 +131,7 @@ def restuarantMenu(request,pk=None):
 			temp.append(i.id)
 			temp.append(rest[0].status)
 			temp.append(i.quantity)
+			temp.append(i.des)
 			items.append(temp)
 	context = {
 		'items'	: items,
@@ -281,7 +282,7 @@ def menuManipulation(request):
 		if type =="Modify":
 			menuid = int(request.POST['menuid'])
 			memu= Menu.objects.filter(id=menuid).\
-					update(price=int(request.POST['price']),quantity=int(request.POST['quantity']))
+					update(price=int(request.POST['price']),quantity=int(request.POST['quantity']),des=request.POST['des'])
 		elif type == "Add" :
 			itemid=int(request.POST['item'])
 			item=Item.objects.filter(id=itemid)
@@ -291,6 +292,7 @@ def menuManipulation(request):
 			menu.r_id=rest
 			menu.price=int(request.POST['price'])
 			menu.quantity=int(request.POST['quantity'])
+			menu.des=request.POST['des']
 			menu.save()
 		else:
 			menuid = int(request.POST['menuid'])
@@ -305,6 +307,7 @@ def menuManipulation(request):
 		cmenu.append(x.price)
 		cmenu.append(x.quantity)
 		cmenu.append(x.id)
+		cmenu.append(x.des)
 		menu.append(cmenu)
 
 	menuitems = Item.objects.all()
